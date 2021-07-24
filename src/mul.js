@@ -12,4 +12,5 @@ function mul(term_one, term_two) {
   }
 }
 
+
 module.exports = mul;
