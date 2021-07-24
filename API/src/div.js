@@ -1,10 +1,15 @@
 const validate = require('./common')
 
-function div(a, b) {
-  if (validate.validateNumber(a) && validate.validateNumber(b) && b > 0) {
-    return a / b;
+function div(term_one, term_two) {
+  if (validate.validateNumber(term_one) && validate.validateNumber(term_two) && term_two > 0) {
+    let calculatedValue = Number.parseFloat(term_one) / Number.parseFloat(term_two)
+    return {
+      'result': calculatedValue
+    }
   } else {
-    return 0
+    return {
+      'result': 0
+    }
   }
 }
 

@@ -1,5 +1,10 @@
 module.exports = {
     validateNumber: function (params) {
-        return typeof params === 'number'
+        if (typeof params === 'undefined') {
+            return false
+        }
+        let string = params.toString()
+        let number = Number.parseFloat(string)
+        return !Number.isNaN(number)
     }
 }

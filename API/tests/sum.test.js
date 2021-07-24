@@ -1,13 +1,16 @@
 const sum = require('../src/sum');
 
 test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3)
+  let value = sum(1, 2)
+  expect(value.result).toBe(3)
 });
 
 test('validate inputs', () => {
-  expect(sum('a', 'b')).toBe(0)
+  let value = sum('a', 'b')
+  expect(value.result).toBe(0)
 })
 
 test('validate inputs 2', () => {
-  expect(sum('a', 2)).toBe(0)
+  let value = sum('a', 2)
+  expect(value.result).toBe(0)
 })
