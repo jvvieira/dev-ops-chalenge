@@ -6,34 +6,35 @@
      - Ferramenta de testes: JEST
      - Ferramenta CI/CD: GitHub Actions
      - API Host: AWS Elastic Beanstalk
+     - Automação de infra: Terraform
     
 ## API 
-    - Base URL http://devopschalenge-env.eba-a7d8wpm4.us-east-2.elasticbeanstalk.com/api/
+    - Base URL http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com/
     - Endpoints
         -Soma
             - Endpoint: /sum
             - Paramentros:
                 - term_one
                 - term_two
-            - Exemplo: http://devopschalenge-env.eba-a7d8wpm4.us-east-2.elasticbeanstalk.com/api/sum?term_one=11&term_two=4
+            - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/sum?term_one=11&term_two=4
         -Subtração
             - Endpoint: /sub
             - Paramentros:
                 - term_one
                 - term_two
-            - Exemplo: http://devopschalenge-env.eba-a7d8wpm4.us-east-2.elasticbeanstalk.com/api/sub?term_one=11&term_two=4
+            - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/sub?term_one=11&term_two=4
         -Multiplicação
             - Endpoint: /mul
             - Paramentros:
                 - term_one
                 - term_two
-            - Exemplo: http://devopschalenge-env.eba-a7d8wpm4.us-east-2.elasticbeanstalk.com/api/mul?term_one=11&term_two=4
+            - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/mul?term_one=11&term_two=4
         -Divisão
             - Endpoint: /div
             - Paramentros:
                 - term_one
                 - term_two
-            - Exemplo: http://devopschalenge-env.eba-a7d8wpm4.us-east-2.elasticbeanstalk.com/api/div?term_one=11&term_two=4
+            - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/div?term_one=11&term_two=4
 
 ## Configurações GitHub actions
     - Adicionar secrets ao Repositorio.
@@ -44,24 +45,18 @@
             - "Perfil" > My security Credentials > Access keys (access key ID and secrect access key) > Create new Access Key
 
 ## Configurações AWS
-    - Criar um novo ambiente de Elastic Beanstalk. Selecionar a plataforma Node.JS
-    - Deixar as configurações conforme abaixo
+    - [Pré-Requisitos] AWS e Terraform devidamente instalados e configurados
+    - Utilizando o Console vá até a pasta "infra" e execute.
+        terraform apply
 
-            Rolling updates and deployments	
-                Batch size: 100%
-                Command timeout: 600
-                Deployment policy: All at once
-                Healthy threshold: Ok
-                Ignore health check: disabled
-                Rolling updates: disabled	
             
 ## Configurações CI/CD
     - Deploy Action:
         Branch: main
         Arquivo: .github/workflows/deploy.js.yml  
         Configurações:
-            application_name: dev-ops-chalenge
-            environment_name: Devopschalenge-env
+            application_name: vd-chalenge
+            environment_name: vd-chalenge
             region: us-east-2
     - Test Action
         Branch: dev
