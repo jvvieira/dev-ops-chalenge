@@ -12,37 +12,37 @@
     - Endpoints
         -Soma
             - Endpoint: /sum
-            - Paramentros:
+            - Parâmetros:
                 - term_one
                 - term_two
             - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/sum?term_one=11&term_two=4
         -Subtração
             - Endpoint: /sub
-            - Paramentros:
+            - Parâmetros:
                 - term_one
                 - term_two
             - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/sub?term_one=11&term_two=4
         -Multiplicação
             - Endpoint: /mul
-            - Paramentros:
+            - Parâmetros:
                 - term_one
                 - term_two
             - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/mul?term_one=11&term_two=4
         -Divisão
             - Endpoint: /div
-            - Paramentros:
+            - Parâmetros:
                 - term_one
                 - term_two
             - Exemplo: http://vd-chalenge.eba-dwqxrm84.us-east-2.elasticbeanstalk.com//api/div?term_one=11&term_two=4
 
 ## Configurações GitHub actions
-    - Adicionar secrets ao Repositorio.
+    - Adicionar secrets ao Repositório.
         - Setings > Secrets > New repository secret
             - AWS_ACCESS_KEY_ID
             - AWS_SECRET_ACCESS_KEY
         *Para obter os valores vá ao painel da AWS então clique em:
             - "Perfil" > My security Credentials > Access keys (access key ID and secrect access key) > Create new Access Key
-            - Guarde essas informações temporiariamente pois serão necessárias durante a configuração da AWS.
+            - Guarde essas informações temporariamente pois serão necessárias durante a configuração da AWS.
 
 ## Configurações AWS
     - Instalação Terraform
@@ -52,7 +52,7 @@
         Execute os passos contidos no seguinte link
         * https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install
         * Após a instalação execute o comando: aws configure
-            - Por padão estou utilizando a region: us-east-2
+            - Por padrão estou utilizando a region: us-east-2
 
     - Utilizando o Console vá até a pasta "infra" e execute.
         terraform apply
